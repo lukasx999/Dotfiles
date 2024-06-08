@@ -1,0 +1,450 @@
+configuration {
+//modes: "drun,run,window,ssh,combi,keys,filebrowser,recursivebrowser";
+//modes: "drun,run,window";
+modes: "drun,run";
+//font: "Font Awesome, Roboto 14";
+font: "Font Awesome, Roboto 16";
+icon-theme: "Papirus-Dark";
+show-icons: true;
+terminal: "kitty";
+case-sensitive: false;
+cycle: true;
+sidebar-mode: true;
+hide-scrollbar: true;
+
+hover-select: true;
+//auto-select: true;
+//scroll-method: 1;
+
+
+kb-row-up: "Up,Control+k,Shift+Tab";
+kb-row-down: "Down,Control+j,Tab";
+kb-mode-next: "Control+Tab";
+kb-mode-previous: "Control+Shift+Tab";
+kb-remove-char-back: "BackSpace";
+kb-accept-entry: "Return,KP_Enter";
+kb-row-left: "Control+h";
+kb-row-right: "Control+l";
+kb-mode-complete: "";
+kb-element-next: "";
+kb-element-prev: "";
+
+kb-remove-to-eol: "";
+
+/*  kb-entry-history-up: "Control+Up";*/
+/*  kb-entry-history-down: "Control+Down";*/
+
+
+
+
+
+  drun {
+    display-name: "  Apps ";
+  }
+
+  dmenu {
+    display-name: "  dmenu ";
+  }
+
+  run {
+    display-name: "  Run ";
+  }
+
+  window {
+    display-name: " Win";
+  }
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+
+
+
+
+
+//@theme "catppuccin-mocha"
+@theme "/dev/null"
+
+
+
+
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  width: 1000;
+
+  bg: #1a1b26; //last 2 digits are alpha value 7f is 127 -- 0x32 for 50
+  bg-alt: #24283b;
+  fg: #c0caf5;
+  fg-alt: #7aa2f7;
+  accent: #7aa2f7;
+  accent-alt: #f7768e;
+  transparent: #00000000;
+  //transparent: #00000032;
+  transparentsemi: #1a1b26f5;
+  transparentsemi: #1a1b26e6; // 230
+  transparentsemi: #1a1b267f;
+
+  transparentsemi: #1a1b26d7;
+
+  //transparentsemi: #1a1b260f;
+
+  background-color: @bg;
+  //background-color: @transparent;
+  text-color: @fg;
+}
+
+
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+
+window {
+    enabled: true;
+    width: 45%;
+
+    width: 50%;
+    height: 50%;
+
+    background-color: @bg;
+    background-color: @transparentsemi; //
+    background-color: @transparent; //
+
+    border:           1;
+    fullscreen: false;
+    spacing: 0em;
+    //padding:          5;
+    //padding:          0em;
+    transparency: "real";
+    cursor: "default";
+
+    //border-radius: 2em;
+    border-radius: 1.5em;
+    padding: 0.5em;
+    padding: 0 0px 0 0em;
+
+    border-color: @fg-alt;
+    //border: 3px;
+    //border: 1px;
+
+    border-color: @bg;
+    border: 1px;
+
+    //height:                      33em;
+    //width:                       63em;
+
+    //transparency: "screenshot";
+    //children: [overlay, mainbox, inputbar, listview, mode-switcher, message];
+}
+mainbox {
+    border:  3;
+    background-color: @bg;
+    background-color: @transparentsemi; //
+    //padding: 0;
+    //children: [inputbar, message, listview, mode-switcher];
+
+    children: [inputbar, message, listview];
+    children: [inputbar, listview];
+
+    //children: [inputbar, listview, mode-switcher];
+
+    //padding: 1.5px;
+    padding: 0;
+
+    border: 0;
+
+    //background-color:            transparent;
+}
+
+
+message {
+    background-color: @bg-alt;
+    margin: 2px;
+    border:       1px dash 0px 0px ;
+    //border-color: @separatorcolor;
+    padding:      1px ;
+}
+textbox {
+    text-color: @fg;
+}
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      5;
+    //handle-color: @bg-alt;
+    //handle-color: @accent-alt;
+
+    background-color: @transparent;
+
+    handle-color: @fg-alt;
+    //handle-color: @bg; //
+
+    //border-radius: 1em;
+}
+listview {
+    //columns: 2;
+    columns: 1;
+
+    background-color: @bg;
+    background-color: @transparent; //
+
+    scrollbar-width: 0;
+    cycle: true;
+    fixed-height: false;
+    dynamic: false; // DYNAMIC
+    border:       2px dash 0px 0px ;
+    //border-color: @separatorcolor;
+    spacing:      5px ;
+    //scrollbar:    true;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+    lines: 6;
+
+
+
+    require-input: false;
+    //require-input: true;
+    //dynamic: true;
+
+
+
+    border-color: @bg-alt;
+
+    //flow: Horizontal;
+
+    padding: 0.5em;
+    children: [scrollbar, element, element-icon, element-index, element-text];
+}
+element {
+    border:  0;
+    padding: 3px ;
+    background-color: @transparent; //
+    //children: [element-icon, element-text];
+}
+
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @fg-alt;
+
+    border-radius: 1em;
+}
+
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    padding: 10px 10px;
+    vertical-align: 0.5;
+    //highlight: underline red;
+}
+element-text selected {
+  //text-color: @fg-alt;
+  text-color: @accent-alt;
+
+  //text-color: @bg; // blue bg
+}
+
+element-icon {
+  //padding: 10px 10px;
+
+  padding: 10px 20px;
+
+  size: 1.25em;
+}
+
+element.normal.normal {
+    background-color: @bg;
+    //background-color: @transparent;
+    background-color: @transparent; //
+    text-color:       @fg;
+}
+element.normal.active {
+    background-color: @bg-alt;
+    //background-color: @transparent;
+    text-color:       @fg-alt;
+}
+element.selected.normal {
+    //background-color: @bg-alt;
+    //background-color: @bg; //
+    background-color: @bg-alt; //
+    //background-color: @transparent;
+    text-color:       @fg-alt;
+
+
+    //background-color: @fg-alt; // blue bg
+}
+element.selected.active {
+    background-color: @bg-alt;
+    //background-color: @transparent;
+    text-color:       @fg-alt;
+}
+mode-switcher {
+    spacing: 0;
+    border:       2px dash 0px 0px ;
+    background-color: @accent-alt;
+    //background-color: @transparent;
+
+    //color: @accent;
+    //border-color: @separatorcolor;
+}
+
+
+button {
+    padding: 10px;
+    background-color: @bg-alt;
+    //text-color: @bg;
+    text-color: @fg;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+button.selected {
+    background-color: @bg-alt;
+    //text-color:       @fg-alt;
+    text-color: @accent-alt;
+}
+
+
+
+inputbar {
+    spacing:    3;
+    spacing: 0;
+    //background-color: @bg;
+    background-color: @bg-alt; //
+    text-color: @fg;
+
+    padding: 3px ;
+    //padding: 0px;
+
+    margin: 15px;
+    //children: [prompt, entry, case-indicator];
+
+    //children: [prompt, entry, box, case-indicator, num-rows, textbox-slash, num-filtered-rows];
+    //children: [prompt, entry, num-filtered-rows, textbox-slash, num-rows];
+    children: [prompt, entry, num-filtered-rows];
+    //children: [prompt, entry];
+
+    border-radius: 1em;
+    //margin: 0.1em;
+}
+
+
+case-indicator {
+    //spacing:    0;
+    //padding: 10px;
+    text-color: @fg;
+    //background-color: @fg-alt;
+}
+
+box {
+//orientation: center;
+spacing: 0px;
+
+}
+
+num-rows {
+background-color: @bg-alt;
+text-color: @accent-alt;
+
+padding: 12px;
+border-radius: 0 1em 1em 0;
+margin: 5px 5px 5px 0px;
+//spacing: 10em;
+
+//margin: 0px 5px 0px 0px;
+margin: 0;
+}
+
+
+num-filtered-rows {
+background-color: @bg-alt;
+//text-color: @accent-alt;
+text-color: @accent;
+
+padding: 12px;
+border-radius: 1em 0em 0em 1em;
+margin: 5px 0px 5px 5px;
+
+//margin: 0px 0px 0px 5px;
+margin: 0;
+}
+
+
+
+textbox-slash {
+background-color: @bg-alt;
+text-color: @accent-alt;
+
+    //expand:     true;
+    expand:     true;
+    str:        "/";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @fg;
+
+padding: 12px;
+//width: 12;
+//tab-stops: 10;
+//vertical-align: 0;
+//horitzontal-align: 0;
+//border-radius: 1em 0em 0em 1em;
+margin: 0em 10em 0em 0em;
+//margin: 0em 10em 0em 10em;
+}
+
+
+entry {
+    spacing:    0;
+    text-color: @fg;
+
+    background-color: inherit;
+    //background-color: @transparent; //
+
+    padding: 12px 5px;
+    //margin: 20px 0px 0px 10px;
+    margin: 1px 0px 0px 10px;
+    cursor-color: @fg;
+    cursor-width: 1px;
+    blink: false;
+}
+prompt {
+    spacing:    0;
+    //text-color: @fg;
+    text-color: @bg;
+    //background-color: inherit;
+    background-color: @accent;
+    padding: 12px;
+    border-radius: 1em;
+
+    //margin: 0.3em;
+}
+
+textbox {
+background-color: #ffffff;
+}
+
+
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @fg;
+}
+
+
+
+
