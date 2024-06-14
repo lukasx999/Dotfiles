@@ -25,6 +25,8 @@ htop
 gotop
 neofetch
 onefetch
+bat
+bat-extras
 
 # Useful shell programs
 
@@ -45,11 +47,17 @@ python-pip
 gdb
 clang
 python-devtools
+platformio-core
+
+PYTHON:
+- pyside6
+- pyside6-tools
 
 # Apps
 
 spotify
 steam
+anki (aur)
 
 
 # Fonts
