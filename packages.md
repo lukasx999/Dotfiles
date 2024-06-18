@@ -3,6 +3,8 @@ ripgrep
 jq
 fd
 entr
+tree
+tldr
 
 # Etc
 
@@ -12,11 +14,16 @@ man-pages
 
 xwallpaper
 xclip
-picom
-qtile
-rofi
 network-manager-applet
 bluez
+
+
+# Desktop
+
+qtile
+rofi
+picom
+flameshot
 
 
 # Fun shell programs
@@ -47,17 +54,27 @@ python-pip
 gdb
 clang
 python-devtools
+# Microcontrollers
 platformio-core
+platformio-core-udev
+esp-idf (aur)
 
 PYTHON:
 - pyside6
 - pyside6-tools
+
+
+# Neovim
+
+- stylua
+- python-isort
 
 # Apps
 
 spotify
 steam
 anki (aur)
+visual-studio-code-bin (aur)
 
 
 # Fonts
