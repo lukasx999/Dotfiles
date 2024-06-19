@@ -9,6 +9,8 @@ tldr
 # Etc
 
 man-pages
+python-pillow (for kitty image previews)
+gitleaks (scans git repos for secrets)
 
 # X11
 
@@ -16,6 +18,7 @@ xwallpaper
 xclip
 network-manager-applet
 bluez
+xdotool
 
 
 # Desktop
@@ -24,6 +27,7 @@ qtile
 rofi
 picom
 flameshot
+kitty
 
 
 # Fun shell programs
@@ -51,9 +55,11 @@ rust
 python-pip
 
 # Programming
+docker
 gdb
 clang
 python-devtools
+mypy
 # Microcontrollers
 platformio-core
 platformio-core-udev
