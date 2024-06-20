@@ -6,6 +6,11 @@ entr
 tree
 tldr
 
+
+# Extra Shell tools
+
+- sshfs
+
 # Etc
 
 man-pages
@@ -60,6 +65,7 @@ gdb
 clang
 python-devtools
 mypy
+cython
 # Microcontrollers
 platformio-core
 platformio-core-udev
@@ -84,6 +90,7 @@ visual-studio-code-bin (aur)
 
 
 # Fonts
+ttf-roboto
 ttf-jetbrains-mono-nerd
 ttf-font-awesome
 ttf-firacode-nerd

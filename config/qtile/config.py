@@ -8,15 +8,23 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal, send_notification
 
 # Additional Python libraries
-import os, re, sys, subprocess
+import os
+import re
+import sys
+import subprocess
+from getpass import getuser
 
 
 
 mod = "mod4"
 # terminal = guess_terminal()
-terminal = "kitty"
+# terminal = "kitty"
+terminal = "alacritty"
 browser = "firefox"
 launcher = "rofi -show drun"
+screenshot = f"flameshot gui --clipboard --path /home/{getuser()}/Pictures/Screenshots"
+
+
 
 
 
@@ -41,6 +49,42 @@ def window_to_prev_group(qtile):
 #     subprocess.run('/home/lukas/.config/qtile/autostart.sh')
 
 
+
+
+
+@hook.subscribe.client_new # Move specific windows to groups when they are launched
+def new_client(client):
+    match client.name:
+        case "Steam":
+            client.togroup("4")
+        case "Spotify":
+            client.togroup("3")
+
+
+
+games = [
+    "ULTRAKILL",
+    "Wizard of Legend",
+    "God of War",
+    "ELDEN RING",
+]
+
+
+# Gaming
+
+@hook.subscribe.client_new
+def game_launched(client):
+    if client.name in games:
+        client.togroup("5", switch_group=True)
+        qtile.spawn("pkill picom")
+
+
+@hook.subscribe.client_killed
+def game_closed(client):
+    if client.name in games:
+        #qtile.current_screen.set_group(qtile.current_screen.previous_group)
+        qtile.current_screen.set_group(qtile.current_screen.toggle_group("4"))
+        qtile.spawn("picom -b")
 
 
 
@@ -89,6 +133,7 @@ keys = [
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "r", lazy.spawn(launcher), desc="Launch app launcher"),
+    Key([mod], "z", lazy.spawn(screenshot), desc="Take screenshot"),
     Key([mod], "q", lazy.spawn(browser), desc="Launch browser"),
 
 
@@ -228,7 +273,7 @@ groups.append(ScratchPad('scratchpad', [
 layouts = [
 
     layout.Columns(
-        border_focus_stack=["#d75f5f", "#8f3d3d"],
+        # border_focus_stack=["#d75f5f", "#8f3d3d"],
         border_focus="#9aa5ce",
         border_normal="#1a1b26",
         border_width=2,
@@ -325,6 +370,7 @@ screens = [
                 # Group Box
                 widget.GroupBox(
                     # active = '#ffffff',  # Active Group Font
+                    active = '#c0caf5',
                     # background = '#000000',
                     borderwidth = 3,
                     center_aligned = True,
@@ -338,6 +384,8 @@ screens = [
                     margin = 3,
                     markup = True,
                     rounded = True,
+                    urgent_alert_method = 'text',
+                    urgent_text = '#f7768e',
                     highlight_method = 'text',  # border, block, text, line
                     highlight_color = ['#000000', '#414868'],  # Only on line highlighting
                     this_current_screen_border = '#7aa2f7',
@@ -347,6 +395,7 @@ screens = [
                 # Window Count
                 widget.WindowCount(
                     fmt = '{}',
+                    foreground = '#cfc9c2',
                     markup = True,
                     text_format = '{num}  🗗',  # 🗗🗖
                     show_zero = True,
@@ -407,7 +456,11 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ]
+    ],
+
+    border_normal           = "#1a1b26",
+    border_focus            = "#e0af68",
+    border_width            = 2,
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"

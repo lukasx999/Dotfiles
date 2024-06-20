@@ -123,10 +123,14 @@
                 },
                 -- User defined loops
                 additions = {
-                    { "Foo", "Bar" },
+                    { "Foo", "Bar", "Baz" },
                     { "tic", "tac", "toe" },
+                    { "Tic", "Tac", "Toe" },
                     { "foo", "bar", "baz" },
-                    { "left", "right", "top", "bottom" },
+                    { "up", "down" },
+                    { "left", "right" },
+                    { "top", "bottom" },
+                    { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" },
                 },
                 allow_caps_additions = {
                     --{ "enable", "disable" },

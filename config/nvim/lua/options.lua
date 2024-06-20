@@ -6,7 +6,8 @@ vim.fn for vimscript functions
 
 --]]
 
--- vim.opt.guicursor = { 'a:ver25' }  -- make all cursors beam
+-- vim.opt.guicursor = { 'a:ver25' }  -- cursor is beam in all modes
+vim.opt.guicursor = "" -- cursor is block in all modes
 
 -- Vim Options
 

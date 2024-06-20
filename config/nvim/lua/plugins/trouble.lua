@@ -6,6 +6,5 @@
             vim.keymap.set("n", "<leader>lt", function()
                 require("trouble").toggle()
             end, { desc = "Trouble" })
-            --vim.keymap.set("n", "<leader>lo", function() require("trouble").toggle("lsp_references") end, { desc = "trouble" })
         end,
     }

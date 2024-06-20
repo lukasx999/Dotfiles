@@ -81,6 +81,7 @@
 
         -- {
         --     "akinsho/bufferline.nvim",
+        --     -- "Theyashsawarkar/bufferline.nvim", -- fork vor v0.10
         --     -- barbar might me better
         --     version = "*",
         --     dependencies = "nvim-tree/nvim-web-devicons",
