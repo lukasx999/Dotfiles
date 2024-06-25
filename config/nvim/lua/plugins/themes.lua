@@ -34,6 +34,14 @@
         },
 
         {
+            "loctvl842/monokai-pro.nvim";
+            config = function()
+            end,
+        },
+
+
+
+        {
             "ku1ik/vim-monokai",
             config = function()
             end,

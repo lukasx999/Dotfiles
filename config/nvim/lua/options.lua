@@ -9,6 +9,11 @@ vim.fn for vimscript functions
 -- vim.opt.guicursor = { 'a:ver25' }  -- cursor is beam in all modes
 vim.opt.guicursor = "" -- cursor is block in all modes
 
+
+
+
+
+
 -- Vim Options
 
 -- use :options

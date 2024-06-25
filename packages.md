@@ -41,6 +41,7 @@ htop
 gotop
 neofetch
 onefetch
+eza
 bat
 bat-extras
 
@@ -48,6 +49,8 @@ bat-extras
 
 ptpython
 fzf
+ranger
+yazi
 
 # Desktop Tools
 
@@ -61,10 +64,12 @@ python-pip
 
 # Programming
 docker
+strace (show syscalls of binary)
+nasm
 gdb
 clang
 python-devtools
-mypy
+mypy (python static type checker)
 cython
 # Microcontrollers
 platformio-core
@@ -83,8 +88,12 @@ PYTHON:
 
 # Apps
 
+boomer-git (aur) (x11 screen zoom)
+emacs
+nautilus
 spotify
 steam
+gimp
 anki (aur)
 visual-studio-code-bin (aur)
 

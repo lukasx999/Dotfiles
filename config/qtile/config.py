@@ -23,6 +23,7 @@ terminal = "alacritty"
 browser = "firefox"
 launcher = "rofi -show drun"
 screenshot = f"flameshot gui --clipboard --path /home/{getuser()}/Pictures/Screenshots"
+zoom = "boomer"
 
 
 
@@ -133,8 +134,9 @@ keys = [
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "r", lazy.spawn(launcher), desc="Launch app launcher"),
-    Key([mod], "z", lazy.spawn(screenshot), desc="Take screenshot"),
+    Key([mod], "s", lazy.spawn(screenshot), desc="Take screenshot"),
     Key([mod], "q", lazy.spawn(browser), desc="Launch browser"),
+    Key([mod], "a", lazy.spawn(zoom), desc="Launch zoom"),
 
 
     # Toggle between different layouts as defined below
