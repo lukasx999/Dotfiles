@@ -1,29 +1,34 @@
 # Shell tools
-ripgrep
-jq
-fd
-entr
+ripgrep (grep multiple files)
+jq (json processor)
+fd (better find)
+entr (tracks file changes)
 tree
-tldr
+tldr (better man entries)
+bc (calculator lang)
+imagemagick (image manipulation)
 
 
 # Extra Shell tools
 
-- sshfs
+- sshfs (mount filesystems over ssh)
 
 # Etc
 
-man-pages
+man-pages (man pages for glibc)
 python-pillow (for kitty image previews)
 gitleaks (scans git repos for secrets)
 
 # X11
 
+dunst
 xwallpaper
 xclip
 network-manager-applet
 bluez
 xdotool
+i3lock-color (aur) (needed for betterlockscreen)
+betterlockscreen (aur)
 
 
 # Desktop
@@ -37,6 +42,7 @@ kitty
 
 # Fun shell programs
 
+catimg (terminal image viewer)
 htop
 gotop
 neofetch
@@ -50,7 +56,7 @@ bat-extras
 ptpython
 fzf
 ranger
-yazi
+yazi (file manager)
 
 # Desktop Tools
 
@@ -83,11 +89,13 @@ PYTHON:
 
 # Neovim
 
+- tree-sitter-cli (treesitter executable not found error)
 - stylua
 - python-isort
 
 # Apps
 
+gromit-mpx (aur) (screen annotation tool)
 boomer-git (aur) (x11 screen zoom)
 emacs
 nautilus
